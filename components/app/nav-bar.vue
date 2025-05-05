@@ -8,10 +8,7 @@
 
     <div class="navbar-end space-x-4">
       <AppThemeToggle />
-      <NuxtLink to="/signin" class="btn btn-accent">
-        Sign In With Github
-        <Icon name="tabler:brand-github" size="24" />
-      </NuxtLink>
+      <GithubAuthBtn />
     </div>
   </div>
 </template>
