@@ -1,8 +1,8 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "45fea2b4-583b-4a52-be3a-de557867bdb0",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "a853f7d4-0277-43f4-801b-827862b6fffc",
+  "prevId": "038f4c71-8715-4948-95f0-3ee247028359",
   "tables": {
     "account": {
       "name": "account",
@@ -30,7 +30,7 @@
         },
         "user_id": {
           "name": "user_id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -173,7 +173,7 @@
         },
         "user_id": {
           "name": "user_id",
-          "type": "text",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false
@@ -309,14 +309,14 @@
           "name": "created_at",
           "type": "integer",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         },
         "updated_at": {
           "name": "updated_at",
           "type": "integer",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         }
       },
@@ -371,6 +371,13 @@
           "notNull": true,
           "autoincrement": false
         },
+        "user_id": {
+          "name": "user_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
         "created_at": {
           "name": "created_at",
           "type": "integer",
@@ -395,7 +402,21 @@
           "isUnique": true
         }
       },
-      "foreignKeys": {},
+      "foreignKeys": {
+        "location_user_id_user_id_fk": {
+          "name": "location_user_id_user_id_fk",
+          "tableFrom": "location",
+          "tableTo": "user",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {},
       "checkConstraints": {}
@@ -459,6 +480,13 @@
           "notNull": true,
           "autoincrement": false
         },
+        "user_id": {
+          "name": "user_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
         "created_at": {
           "name": "created_at",
           "type": "integer",
@@ -482,6 +510,19 @@
           "tableTo": "location",
           "columnsFrom": [
             "location_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "locationLog_user_id_user_id_fk": {
+          "name": "locationLog_user_id_user_id_fk",
+          "tableFrom": "locationLog",
+          "tableTo": "user",
+          "columnsFrom": [
+            "user_id"
           ],
           "columnsTo": [
             "id"
@@ -518,6 +559,13 @@
           "notNull": true,
           "autoincrement": false
         },
+        "user_id": {
+          "name": "user_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
         "created_at": {
           "name": "created_at",
           "type": "integer",
@@ -541,6 +589,19 @@
           "tableTo": "locationLog",
           "columnsFrom": [
             "location_log_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "locationLogImage_user_id_user_id_fk": {
+          "name": "locationLogImage_user_id_user_id_fk",
+          "tableFrom": "locationLogImage",
+          "tableTo": "user",
+          "columnsFrom": [
+            "user_id"
           ],
           "columnsTo": [
             "id"
