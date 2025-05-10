@@ -22,7 +22,12 @@ const authStore = useAuthStore();
     </ul>
   </div>
 
-  <button v-else class="btn btn-accent" :disabled="authStore.loading" @click="authStore.signIn">
+  <button
+    v-else
+    class="btn btn-accent"
+    :disabled="authStore.loading"
+    @click="authStore.signIn"
+  >
     Sign In With Github
     <span v-if="authStore.loading" class="loading loading-ring loading-xl" />
     <Icon v-else name="tabler:brand-github" size="24" />
